@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const {posts} = require("../controler/posts.js")
+const {postCreate ,getPosts ,getPostById} = require("../controler/postsControler.js")
 const {auth} = require("../middlewares/auth.js")
 
-router.get("/" , auth , posts)
+router.get("/" , auth , getPosts)
+router.post("/" , auth , postCreate)
+router.get("/:id", auth , getPostById)
 
 module.exports = router

@@ -7,7 +7,7 @@ const {
   getUserProfile,
   updateUserProfile,
   deleteUserAccount,
-} = require("../controler/users.js");
+} = require("../controler/usersControler.js");
 
 router.get("/:id", auth, isOwner, getUserProfile);
 router.put("/:id", auth, isOwner, updateUserProfile);
